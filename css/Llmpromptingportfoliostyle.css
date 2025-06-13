@@ -1,0 +1,184 @@
+/* Pearl's Prompt Portfolio - Inspired by Vintage CSS Zen Garden */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffd6e8 url('https://www.transparenttextures.com/patterns/gplay.png') repeat;
+  color: #6e3b47;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: #2e1f23;
+  color: #f5cbd3;
+}
+
+a {
+  color: #d57a99;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: #fbb6ce;
+  padding: 2rem;
+  text-transform: lowercase;
+  letter-spacing: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 4px double #d57a99;
+}
+image {
+  max-width: 20%;
+  height: auto;
+  border-radius: 10px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: #6e3b47;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  background: #ffe6ee;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #fbb6ce;
+}
+
+#toggleDark {
+  background: transparent;
+  border: 1px solid #6e3b47;
+  color: #6e3b47;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-date {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffe6ee;
+}
+
+.search-date input {
+  padding: 0.5rem;
+  border: 1px solid #d57a99;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff0f6;
+  border: 2px solid #fbb6ce;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(214, 143, 168, 0.25);
+}
+
+body.dark .card {
+  background: #3c2a30;
+  border-color: #d57a99;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(214, 143, 168, 0.4);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.card-content h3 {
+  color: #c74f7d;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  padding: 2rem;
+  background: #fbb6ce;
+  font-weight: bold;
+  color: #6e3b47;
+  border-top: 4px double #d57a99;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  .search-date {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+h1 {
+  text-transform: uppercase; /* OR use 'capitalize' depending on desired effect */
+}

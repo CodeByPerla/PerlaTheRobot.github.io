@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perla Mendoza | Social Links</title>
+  <style>
+    :root {
+      --font: system-ui, sans-serif;
+      --bg: #fdfdfd;
+      --text: #222;
+      --accent: #0077b5;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.75rem;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 0.5rem;
+      transition: background 0.3s;
+    }
+
+    nav a.github { background-color: #333; }
+    nav a.codepen { background-color: #000; }
+
+    nav a:hover,
+    nav a:focus {
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: auto;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Perla Mendoza</h1>
+    <p>Front-End | Logistics | Prompt Engineering</p>
+  </header>
+
+  <nav aria-label="Social profiles">
+    <a href="https://www.linkedin.com/in/mendozaperla/" target="_blank" rel="noopener" class="linkedin">LinkedIn</a>
+    <a href="https://github.com/CodeByPerla" target="_blank" rel="noopener" class="github">GitHub</a>
+    <a href="https://codepen.io/DrEggmansGirlfriend" target="_blank" rel="noopener" class="codepen">CodePen</a>
+    <a href="https://www.linkedin.com/in/mendozaperla/" target="_blank" rel="noopener" class="linkedin">Technical Documentation Portfolio</a>
+    <a href="https://github.com/CodeByPerla" target="_blank" rel="noopener" class="github">Excel Projects</a>
+    <a href="https://codepen.io/DrEggmansGirlfriend" target="_blank" rel="noopener" class="codepen">CodePen</a>
+    <a href="https://www.youtube.com/channel/UC15GCkefOPWiaWEC20m3dDA" target="_blank" rel="noopener" class="codepen">Youtube - Tech_Optimization_Specialist</a>
+
+  </nav>
+
+  <footer>
+    &copy; 2025 Perla Mendoza
+  </footer>
+</body>
+</html>

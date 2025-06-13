@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Reach out for your dreams✨</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="scene-container"> 
+</div>
+<div>
+  
+</div>
+
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+    }
+  }
+</script>
+
+<!-- UTILS FUNCTIONS -->
+
+<script>
+  
+function getRandomFromArr(arr) {
+
+  const randomElement = arr[Math.floor(Math.random() * arr.length)];
+  return randomElement;
+
+}
+
+function getRandomBetween(min, max) {
+  
+  return Math.random() * (max - min) + min;
+  
+}
+
+function getRandomIntBetween(min, max) {
+  
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+  
+}
+
+</script>
+<!-- partial -->
+  <script type="module" src="./script.js"></script>
+
+</body>
+</html>

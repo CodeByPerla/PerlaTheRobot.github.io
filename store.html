@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Store Coming Soon</title>
+  <style>
+    :root {
+      --pink-light: #ffe0f0;
+      --pink: #ffb6d9;
+      --pink-deep: #ff69b4;
+      --pink-text: #d1006b;
+      --pink-border: #ff99cc;
+      --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: var(--pink-light);
+      color: var(--pink-text);
+      font-family: var(--font);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--pink-text);
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 1rem 0 2rem;
+      color: var(--pink-text);
+    }
+
+    .status-box {
+      background-color: var(--pink-deep);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: #a8477c;
+    }
+
+    button {
+      margin-top: 2rem;
+      background-color: var(--pink);
+      color: var(--pink-text);
+      border: 2px solid var(--pink-border);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: var(--pink-deep);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Store is Coming Soon</h1>
+  </header>
+
+  <main>
+    <p>We’re building something cute and powerful just for you 💖</p>
+    <div class="status-box" id="status">
+      🚧 Under Construction 🚧
+    </div>
+    <button onclick="notify()">Notify Me When Live</button>
+  </main>
+
+  <footer>
+    &copy; 2025 Pearl Mendoza. All rights reserved.
+  </footer>
+
+  <script>
+    function notify() {
+      alert("We'll notify you once it's live! 💌");
+    }
+  </script>
+</body>
+</html>
+
+

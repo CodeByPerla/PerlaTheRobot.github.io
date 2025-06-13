@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is the use of a book without pictures or conversations?</title>
+  <link rel="stylesheet" href="css/Llmpromptingportfoliostyle.css" />
+  <script defer src="js/llmpromptingportfolioscript.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Prompt Engineering Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button id="toggleDark">🌙</button>
+    </nav>
+  </header>
+
+  <section class="search-date">
+    <input type="search" id="searchInput" placeholder="Search projects...">
+    <input type="date">
+  </section>
+
+  <section id="projects" class="grid"></section>
+
+  <footer>
+    <p>&copy; 2025 Pearl Mendoza. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal hidden">
+    <span id="closeModal">&times;</span>
+    <img id="modalImage" src="" alt="Expanded view">
+  </div>
+</body>
+</html>
