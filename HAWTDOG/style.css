@@ -1,13 +1,9 @@
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 20px;
+  background: #f8f8f8;
+  font-family: 'Pacifico', cursive;
 }
+
 
 #scene-container {
   position: absolute;
@@ -68,4 +64,12 @@ body {
   0% { color: rgba(0, 0, 0, 0.1); }
   100% { color: rgba(0, 0, 0, 0.85); } 
   
+}
+
+
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
 }

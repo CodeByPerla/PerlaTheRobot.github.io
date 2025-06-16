@@ -32,12 +32,15 @@ nav {
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: right;
+  margin-left: 50px;
 margin-top: 5px;
 }
 
 .logo img {
   height: 50px;
+    align-items: right;
+  margin-left: 100px;
   margin-right: 10px;
  border-radius: 50%;
   border: 5px solid #b64e1d;

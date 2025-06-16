@@ -6,12 +6,177 @@
   <title>The hurrier I go, the behinder I get.</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The hurrier I go, the behinder I get.</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .menu-container {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10000;
+    }
+
+    .hotdog-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: transform 0.2s;
+    }
+
+    .hotdog-stack {
+      position: relative;
+      width: 120px;
+      height: 40px;
+    }
+
+    .hotdog-stack .layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      image-rendering: pixelated;
+      transition: transform 0.3s ease;
+    }
+
+    .hotdog-button.clicked .back {
+      transform: translateY(-4px);
+    }
+
+    .hotdog-button.clicked .meat {
+      transform: translateY(0);
+    }
+
+    .hotdog-button.clicked .front {
+      transform: translateY(4px);
+    }
+
+    .hotdog-button:hover {
+      animation: bounce 0.3s ease;
+    }
+
+    @keyframes bounce {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(3px);
+      border: 2px solid #000;
+      padding: 10px;
+      width: 220px;
+      border-radius: 6px;
+      box-shadow: 4px 4px #000;
+      z-index: 9999;
+    }
+
+    .dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #111;
+      background: #fff;
+      margin: 6px 0;
+      padding: 8px;
+      border: 1px solid #222;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .mustard:hover { background-color: #ffdb58; color: #000; }
+    .relish:hover { background-color: #7fff7f; color: #000; }
+    .onion:hover { background-color: #f5f5f5; color: #000; }
+    .pickle:hover { background-color: #9acd32; color: #000; }
+    .tomato:hover { background-color: #ff6347; color: #fff; }
+    .pepper:hover { background-color: #c71585; color: #fff; }
+    .celery:hover { background-color: #c1e1c1; color: #000; }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      backdrop-filter: blur(2px);
+      z-index: 9990;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<div class="menu-container" id="menuContainer">
+  <div class="hotdog-button" id="menuToggle">
+    <div class="hotdog-stack">
+      <img src="images/menu/images/backbun.png" class="layer back" alt="Back Bun">
+      <img src="images/menu/images/Meat.png" class="layer meat" alt="Meat">
+      <img src="images/menu/images/frontbun.png" class="layer front" alt="Front Bun">
+    </div>
+  </div>
+  <div class="dropdown" id="dropdownMenu">
+    <a href="index.html" class="mustard">Mustard</a>
+    <a href="about.html" class="relish">Relish</a>
+    <a href="portfolio- Art" class="onion">Onion</a>
+    <a href="store.html" class="pickle">Pickle</a>
+    <a href="contact" class="tomato">Tomato</a>
+    <a href="llmpromptingportfolio.html" class="pepper">Peppers</a>
+    <a href="HAWTDOG/index.html" class="celery">Hotdog Related content</a>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const dropdown = document.getElementById("dropdownMenu");
+  const container = document.getElementById("menuContainer");
+  const overlay = document.getElementById("menuOverlay");
+
+  toggleBtn.addEventListener("click", () => {
+    const isVisible = dropdown.style.display === "block";
+    dropdown.style.display = isVisible ? "none" : "block";
+    overlay.style.display = isVisible ? "none" : "block";
+    toggleBtn.classList.toggle("clicked");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!container.contains(e.target)) {
+      dropdown.style.display = "none";
+      overlay.style.display = "none";
+      toggleBtn.classList.remove("clicked");
+    }
+  });
+</script>
+
+<!-- YOUR ORIGINAL CONTENT CONTINUES BELOW -->
+<!-- ... -->
+
+</body>
+</html>
+
+
 <body>
   <!-- Navigation Menu -->
   <nav>
     <div class="logo">
       <img src="images/logo.png" alt="My Logo">
-      <h1>Pearl Mendoza</h1>
+      <h1>Click the hotdog for menu </h1>
 </div>
   <ul class="menu">
 <li><a href="index.html">Home</a></li>
@@ -28,7 +193,7 @@
     <span></span>
     <span></span>
     <span></span>
-  </div>z
+  </div>
   </nav>
 
   <!-- Home Page -->

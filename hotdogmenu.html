@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chicago Hotdog Pixel Menu</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+body {
+  margin: 0;
+  background: #f8f8f8;
+  font-family: 'Pacifico', cursive;
+}
+
+    .menu-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+
+    .hotdog-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: transform 0.2s;
+    }
+
+    .hotdog-stack {
+      position: relative;
+      width: 120px;
+      height: 40px;
+    }
+
+    .hotdog-stack .layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      image-rendering: pixelated;
+      transition: transform 0.3s ease;
+    }
+
+    .hotdog-button.clicked .back {
+      transform: translateY(-4px);
+    }
+
+    .hotdog-button.clicked .meat {
+      transform: translateY(0);
+    }
+
+    .hotdog-button.clicked .front {
+      transform: translateY(4px);
+    }
+
+    .hotdog-button:hover {
+      animation: bounce 0.3s ease;
+    }
+.dropdown a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+    @keyframes bounce {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(3px);
+      border: 2px solid #000;
+      padding: 10px;
+      width: 220px;
+      border-radius: 6px;
+      box-shadow: 4px 4px #000;
+    }
+.mustard:hover {
+  background-color: #c59d0a; /* mustard yellow */
+  color: #000;
+}
+
+.relish:hover {
+  background-color: #014201; /* bright green relish */
+  color: #000;
+}
+
+.onion:hover {
+  background-color: #c7c5c5; /* white onion */
+  color: #000;
+}
+
+.pickle:hover {
+  background-color: #628b11; /* dill pickle green */
+  color: #000;
+}
+
+.tomato:hover {
+  background-color: #ff6347; /* tomato red */
+  color: #fff;
+}
+
+.pepper:hover {
+  background-color: #95a10e; /* sport pepper pink/purple */
+  color: #fff;
+}
+
+.celery:hover {
+  background-color: #268826; /* celery salt */
+  color: #000;
+}
+    .dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #111;
+      background: #fff;
+      margin: 6px 0;
+      padding: 8px;
+      border: 1px solid #222;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .emoji {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="sizzleSound" preload="auto">
+  <source src="https://freesound.org/people/guterton.wav/" type="audio/mpeg">
+</audio>
+
+<div class="menu-container" id="menuContainer">
+  <div class="hotdog-button" id="menuToggle">
+  <div class="hotdog-stack">
+    <img src="images/menu/images/backbun.png" class="layer back" alt="Back Bun">
+    <img src="images/menu/images/Meat.png" class="layer meat" alt="Meat">
+    <img src="images/menu/images/frontbun.png" class="layer front" alt="Front Bun">
+  </div>
+</div>
+    <div class="hotdog-part sausage" data-part="Sausage"></div>
+    <div class="hotdog-part bun-bottom" data-part="Bun Bottom"></div>
+  </div>
+
+  <div class="dropdown" id="dropdownMenu">
+    <a href="#mustard" class="mustard"><img src="images/menu/images/ingrediant/mustard.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;"> Mustard</a>
+    <a href="#relish" class="relish"><img src="images/menu/images/ingrediant/relish.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;">Relish</a>
+    <a href="#onion" class="onion"><img src="images/menu/images/ingrediant/onion.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;">Onion</a>
+    <a href="#pickle" class="pickle"><img src="images/menu/images/ingrediant/pickle.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;">Pickle</a>
+    <a href="#tomato" class="tomato"><img src="images/menu/images/ingrediant/tomato.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;">Tomato</a>
+    <a href="#pepper" class="pepper"><img src="images/menu/images/ingrediant/pepper.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;"> >Peppers</a>
+    <a href="#celery" class="celery"><img src="images/menu/images/ingrediant/celery.png" alt="Mustard" width="20" height="20" style="image-rendering: pixelated;">Celery Salt</a>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const dropdown = document.getElementById("dropdownMenu");
+  const container = document.getElementById("menuContainer");
+  const sizzleSound = document.getElementById("sizzleSound");
+
+  toggleBtn.addEventListener("click", () => {
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    toggleBtn.classList.toggle("clicked");
+    sizzleSound.currentTime = 0;
+    sizzleSound.play();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!container.contains(e.target)) {
+      dropdown.style.display = "none";
+      toggleBtn.classList.remove("clicked");
+    }
+  });
+
+  const parts = document.querySelectorAll(".hotdog-part");
+  parts.forEach(part => {
+    part.addEventListener("click", (e) => {
+      e.stopPropagation();
+      alert(`You selected the ${e.target.dataset.part}`);
+    });
+  });
+</script>
+
+</body>
+</html>
