@@ -12,46 +12,7 @@
 </head>
 <body>
 
-<!-- Inject Hotdog Menu -->
-<div class="menu-container" id="menuContainer">
-  <button class="hotdog-button" id="menuToggle">
-    <div class="hotdog-stack">
-      <img src="images/menu/images/backbun.png" class="layer back" alt="Back Bun">
-      <img src="images/menu/images/Meat.png" class="layer meat" alt="Meat">
-      <img src="images/menu/images/frontbun.png" class="layer front" alt="Front Bun">
-    </div>
-  </button>
-
-  <div class="dropdown" id="dropdownMenu">
-    <a href="index.html" class="mustard">🌭 Mustard - Home</a>
-    <a href="about.html" class="relish">🥒 Relish - About</a>
-    <a href="blog.html" class="onion">🧅 Onion - Blog</a>
-    <a href="portfolio.html" class="pickle">🥬 Pickle - Portfolio</a>
-    <a href="contact.html" class="tomato">🍅 Tomato - Contact</a>
-    <a href="store.html" class="pepper">🌶️ Pepper - Store</a>
-    <a href="HAWTDOG/index.html" class="celery">🌿 Celery Salt - HawtDawg</a>
-  </div>
 </div>
-
-<script>
-  const toggleBtn = document.getElementById("menuToggle");
-  const dropdown = document.getElementById("dropdownMenu");
-  const container = document.getElementById("menuContainer");
-
-  toggleBtn.addEventListener("click", () => {
-    const isOpen = dropdown.style.display === "block";
-    dropdown.style.display = isOpen ? "none" : "block";
-    toggleBtn.classList.toggle("clicked", !isOpen);
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!container.contains(e.target)) {
-      dropdown.style.display = "none";
-      toggleBtn.classList.remove("clicked");
-    }
-  });
-</script>
-
 
 <!-- Site Navigation -->
 <header class="site-header">
@@ -79,7 +40,7 @@
       </article>
     </a>
 
-    <a href="https://github.com/PearlTheRobot" class="portfolio-item-link">
+    <a href="https://github.com/CodeByPerla" class="portfolio-item-link">
       <article class="portfolio-item" data-aos="fade-up">
         <h2>Programming Projects</h2>
         <p>Welcome to the labyrinth of my coding adventures, where AI prompts are cheekier than a British sitcom, and my GitHub projects serve as monuments to my caffeine addiction.</p>
@@ -88,8 +49,8 @@
 
     <a href="https://www.youtube.com/channel/UC15GCkefOPWiaWEC20m3dDA" class="youtubechannellink">
       <article class="portfolio-item" data-aos="fade-left">
-        <h2>Videos</h2>
-        <p>Strap in for a cinematic odyssey in my video vault, featuring comedy sketches that aim for the stars but occasionally hit the neighbor's dog, and tech tutorials where I'm half magician, half mad scientist.</p>
+        <h2>Certifications</h2>
+        <p>If you are interested in seeing my Certifications here they are all in one place.</p>
       </article>
     </a>
   </section>

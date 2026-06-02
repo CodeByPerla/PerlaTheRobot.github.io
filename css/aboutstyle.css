@@ -154,3 +154,31 @@ nav a {
 }
 
 }
+.hero {
+    text-align: center;
+    padding: 2rem 1rem; /* reduced padding */
+    background-color: var(--color-classic-rose);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    max-width: 800px; /* reduced width */
+}
+
+.hero img {
+    max-width: 80%; /* reduced image size */
+    height: auto;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 1.8rem; /* smaller heading */
+    margin-top: 1rem;
+    color: var(--color-lavender);
+}
+
+.hero p {
+    font-size: 1rem; /* smaller paragraph */
+    margin-top: 0.5rem;
+    color: var(--color-lavender);
+}
+
